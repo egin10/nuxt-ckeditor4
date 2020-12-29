@@ -35,7 +35,12 @@ export default {
         filebrowserImageUploadUrl: 'http://localhost:8000/api/filemanager/upload?type=Images&_token=',
         filebrowserBrowseUrl: 'http://localhost:8000/api/filemanager?type=Files',
         filebrowserUploadUrl: 'http://localhost:8000/api/filemanager/upload?type=Files&_token=',
-        filebrowserUploadMethod: 'form'
+        filebrowserUploadMethod: 'form',
+        fileTools_requestHeaders: {
+           'Accept': 'application/json',
+           'Content-Type': 'application/json',
+           'Authorization': 'Bearer ' 
+        }
       }
     }
   },
