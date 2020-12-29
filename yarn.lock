@@ -1249,6 +1249,11 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
+"@tinymce/tinymce-vue@3":
+  version "3.2.7"
+  resolved "https://registry.yarnpkg.com/@tinymce/tinymce-vue/-/tinymce-vue-3.2.7.tgz#543bf9a3839a77ea8fb378a3054f9976f3e72dbd"
+  integrity sha512-ahGIuGFDlBnnqY2Q7sNBj8//nPuLP2kg9LSEBEi5xll9/F9wlJ3YYEGoe+YM8e9iSGAnkzfbo853HyCnVEV1/w==
+
 "@types/anymatch@*":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
@@ -2423,21 +2428,6 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
-
-ckeditor4-integrations-common@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/ckeditor4-integrations-common/-/ckeditor4-integrations-common-0.1.0.tgz#523044f143a7bcf6fe33bb9786cafe897227fa92"
-  integrity sha512-Z0fOFOyIavYti3jh8u7SQCFTHTJfCF6cceIkxwnrtpTczt5nI0PI16EnknKvUOPOsHVAnmvRi10IUM+2Rooslw==
-  dependencies:
-    load-script "^1.0.0"
-
-ckeditor4-vue@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ckeditor4-vue/-/ckeditor4-vue-1.2.0.tgz#add02df7c504741ca5f7a8d1c380660d621d2836"
-  integrity sha512-JvlBnfDHrhCOoUrQ/Lfug8o+ChOVaNdVE+AuQ9b69h5K8DRZQUAvJgF9/s2L6qngx0FDAKOCpCJhbcBTWlSdAQ==
-  dependencies:
-    ckeditor4-integrations-common "^0.1.0"
-    load-script "^1.0.0"
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -5024,11 +5014,6 @@ load-json-file@^2.0.0:
     parse-json "^2.2.0"
     pify "^2.0.0"
     strip-bom "^3.0.0"
-
-load-script@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
-  integrity sha1-BJGTngvuVkPuSUp+PaPSuscMbKQ=
 
 loader-runner@^2.3.1, loader-runner@^2.4.0:
   version "2.4.0"
@@ -7912,6 +7897,11 @@ timsort@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
+
+tinymce@^5.6.2:
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-5.6.2.tgz#4c20c22e328c5d0baab204928dbc2b0ecbed18b4"
+  integrity sha512-z7zvM5seOPiW86/vqf08kStwW5Zs5U9oQfuqh2rTj4jEcT2QzxT0v72i2zw3W6rbTLldkAej6edFZphj5ee5zg==
 
 tmp@^0.0.33:
   version "0.0.33"
