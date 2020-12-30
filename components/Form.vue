@@ -56,7 +56,7 @@ export default {
           'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media',
         paste_data_images: true,
         file_picker_types: 'file image media',
-        file_picker_callback: this.filePicker
+        file_picker_callback: this.elFinderBrowser
       }
     };
   },
@@ -69,31 +69,46 @@ export default {
   methods: {
     saveContent() {
       console.log(this.form);
-      // this.setPreview(this.form)
+      this.setPreview(this.form)
     },
 
-    filePicker(callback, value, meta) {
-      let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName("body")[0].clientWidth;
-      let y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName("body")[0].clientHeight;
-
-      let cmsURL = "http://localhost:8000/api/filemanager?editor=" + meta.fieldname;
-      if (meta.filetype == "image") {
-        cmsURL = cmsURL + "&type=Images";
-      } else {
-        cmsURL = cmsURL + "&type=Files";
-      }
-
-      tinyMCE.activeEditor.windowManager.openUrl({
-        url: cmsURL,
-        title: "Filemanager",
-        width: x * 0.8,
-        height: y * 0.8,
-        resizable: "yes",
-        close_previous: "no",
-        onMessage: (api, message) => {
-          callback(message.content);
+    elFinderBrowser(callback, value, meta) {
+      tinymce.activeEditor.windowManager.openUrl({
+        title: 'File Manager',
+        url: 'http://localhost:8000/elfinder/tinymce5',
+        /**
+         * On message will be triggered by the child window
+         * 
+         * @param dialogApi
+         * @param details
+         * @see https://www.tiny.cloud/docs/ui-components/urldialog/#configurationoptions
+         */
+        onMessage: function (dialogApi, details) {
+            if (details.mceAction === 'fileSelected') {
+                const file = details.data.file;
+                
+                // Make file info
+                const info = file.name;
+                
+                // Provide file and text for the link dialog
+                if (meta.filetype === 'file') {
+                    callback(file.url, {text: info, title: info});
+                }
+                
+                // Provide image and alt text for the image dialog
+                if (meta.filetype === 'image') {
+                    callback(file.url, {alt: info});
+                }
+                
+                // Provide alternative source and posted for the media dialog
+                if (meta.filetype === 'media') {
+                    callback(file.url);
+                }
+                
+                dialogApi.close();
+            }
         }
-      });
+    });
     }
   }
 };
